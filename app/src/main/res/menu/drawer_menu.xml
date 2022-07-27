@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"/>
+    <item
+        android:id="@+id/item_habit"
+        android:title="습관"/>
+    <item
+        android:id="@+id/item_calender"
+        android:title="달력"/>
+    <item
+        android:id="@+id/item_friend"
+        android:title="친구"/>
+    <item
+        android:id="@+id/item_setting"
+        android:title="환경설정"/>
+
+</menu>
