@@ -12,39 +12,57 @@
         android:layout_height="wrap_content"
         android:text="yyyy/mm/dd"
         android:clickable="true"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/pgbar_main"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="20dp"
+        android:paddingTop="30dp"/>
     <ProgressBar
         android:id="@+id/pgbar_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="false"
+        android:progressTint="#205F9E"
+        android:progressDrawable="@drawable/progressbar_main"
         android:max="100"
-        android:progress="0"
+        android:progress="10"
         app:layout_constraintTop_toBottomOf="@+id/txt_date"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-    <EditText
-        android:id="@+id/etxt_progress_number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rcview_main" />
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         app:layout_constraintTop_toTopOf="@+id/pgbar_main"
         app:layout_constraintBottom_toBottomOf="@+id/pgbar_main"
         app:layout_constraintLeft_toLeftOf="@id/pgbar_main"
-        app:layout_constraintRight_toLeftOf="@id/txt_progress_percent"
-        />
-    <TextView
-        android:id="@+id/txt_progress_percent"
-        android:layout_width="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/pgbar_main">
+        <TextView
+            android:id="@+id/txt_progress_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"
+            />
+        <TextView
+            android:id="@+id/txt_progress_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcview_main"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="%"
-        app:layout_constraintTop_toTopOf="@+id/pgbar_main"
-        app:layout_constraintBottom_toBottomOf="@+id/pgbar_main"
-        app:layout_constraintLeft_toLeftOf="@id/etxt_progress_number"
-        app:layout_constraintRight_toRightOf="@id/pgbar_main"/>
+        app:layout_constraintTop_toBottomOf="@id/pgbar_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:listitem="@layout/item_list_main"/>
 
 
 
