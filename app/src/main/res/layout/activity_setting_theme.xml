@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="10"
+    tools:context=".MainActivity"
+    >
+    <Button
+        android:id="@+id/Button_hamburger"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        >
+    </Button>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="테마"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/icon_theme"
+        android:drawablePadding="15dp"
+        android:textColor="@color/black"
+        />
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="2dp"
+        android:background="#989898"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:text="어둡게"
+        android:textSize="20dp"
+        android:drawableStart="@drawable/blackcircle"
+        android:drawablePadding="10dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="밝게"
+        android:gravity="left"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:textSize="20dp"
+        android:drawableStart="@drawable/whitecircle"
+        android:drawablePadding="12dp"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>
