@@ -1,17 +1,22 @@
 package com.example.grabit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.app.DatePickerDialog;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.grabit.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,12 +31,38 @@ public class MainActivity extends AppCompatActivity {
     private MainAdapter mainAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        navigationView = binding.nav;
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.item_habit:
+                        Toast.makeText(MainActivity.this,"habit",Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.item_calender:
+                        Intent intent = new Intent(MainActivity.this, CalenderHabitActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.item_friend:
+                        Toast.makeText(MainActivity.this,"friend",Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.item_setting:
+                        Toast.makeText(MainActivity.this,"setting",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
+
 
         recyclerView = binding.rcviewMain;
         linearLayoutManager = new LinearLayoutManager(this);
@@ -91,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-    }
+
+    }//onCreat()
 
 }

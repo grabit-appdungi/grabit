@@ -24,12 +24,12 @@
         android:layout_height="50dp"
         android:layout_marginBottom="321dp"
         android:entries="@array/habit_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintBottom_toTopOf="txt_habit_rate"/>
+        app:layout_constraintBottom_toTopOf="@id/scr_habit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"/>
 
     <ScrollView
+        android:id="@+id/scr_habit"
         android:layout_width="356dp"
         android:layout_height="695dp"
         app:layout_constraintEnd_toEndOf="parent"
