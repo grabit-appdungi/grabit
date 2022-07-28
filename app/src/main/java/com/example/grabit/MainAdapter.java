@@ -1,5 +1,6 @@
 package com.example.grabit;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
 
     private ArrayList<MainData> arrayList;
+    private Intent intent;
 
     public MainAdapter(ArrayList<MainData> arrayList) {
         this.arrayList = arrayList;
@@ -38,8 +40,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String curName = holder.habit_name.getText().toString();
-                Toast.makeText(view.getContext(),curName,Toast.LENGTH_SHORT).show();
+                intent = new Intent(view.getContext(), MainHabitDetailActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
     }
