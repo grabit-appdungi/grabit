@@ -31,6 +31,32 @@ public class HabitSettingActivity extends AppCompatActivity {
         ToggleButton btn_toggle_fri = binding.btnToggleFri;
         ToggleButton btn_toggle_sat = binding.btnToggleSat;
         ToggleButton btn_toggle_sun = binding.btnToggleSun;
+        navigationView = binding.nav;
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.item_home:
+                        Intent intent_home = new Intent(HabitSettingActivity.this, MainActivity.class);
+                        startActivity(intent_home);
+                        break;
+                    case R.id.item_habit:
+                        Intent intent_main = new Intent(HabitSettingActivity.this, HabitSettingActivity.class);
+                        startActivity(intent_main);
+                        break;
+                    case R.id.item_calender:
+                        Intent intent_calender = new Intent(HabitSettingActivity.this, CalenderActivity.class);
+                        startActivity(intent_calender);
+                        break;
+                    case R.id.item_setting:
+                        Intent intent_setting = new Intent(HabitSettingActivity.this, SettingActivity.class);
+                        startActivity(intent_setting);
+                        break;
+                }
+                return false;
+            }
+            });
 
         navigationView = binding.nav;
 
