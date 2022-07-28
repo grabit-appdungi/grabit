@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CalenderHabitActivity"/>
+        <activity android:name=".MainHabitDetailActivity"/>
     </application>
 
 </manifest>

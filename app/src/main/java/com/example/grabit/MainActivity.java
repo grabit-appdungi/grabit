@@ -46,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.item_habit:
-                        Toast.makeText(MainActivity.this,"habit",Toast.LENGTH_SHORT).show();
+                        Intent intent_main = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent_main);
                         break;
                     case R.id.item_calender:
-                        Intent intent = new Intent(MainActivity.this, CalenderHabitActivity.class);
-                        startActivity(intent);
+                        Intent intent_calender = new Intent(MainActivity.this, CalenderHabitActivity.class);
+                        startActivity(intent_calender);
                         break;
                     case R.id.item_friend:
                         Toast.makeText(MainActivity.this,"friend",Toast.LENGTH_SHORT).show();
@@ -122,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+
 
     }//onCreat()
 
