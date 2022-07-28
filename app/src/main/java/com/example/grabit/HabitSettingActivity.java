@@ -1,17 +1,22 @@
 package com.example.grabit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.grabit.databinding.ActivityHabitSettingBinding;
+import com.google.android.material.navigation.NavigationView;
 
 public class HabitSettingActivity extends AppCompatActivity {
     private ActivityHabitSettingBinding binding;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +31,32 @@ public class HabitSettingActivity extends AppCompatActivity {
         ToggleButton btn_toggle_fri = binding.btnToggleFri;
         ToggleButton btn_toggle_sat = binding.btnToggleSat;
         ToggleButton btn_toggle_sun = binding.btnToggleSun;
+        navigationView = binding.nav;
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.item_home:
+                        Intent intent_home = new Intent(HabitSettingActivity.this, MainActivity.class);
+                        startActivity(intent_home);
+                        break;
+                    case R.id.item_habit:
+                        Intent intent_main = new Intent(HabitSettingActivity.this, HabitSettingActivity.class);
+                        startActivity(intent_main);
+                        break;
+                    case R.id.item_calender:
+                        Intent intent_calender = new Intent(HabitSettingActivity.this, CalenderActivity.class);
+                        startActivity(intent_calender);
+                        break;
+                    case R.id.item_setting:
+                        Intent intent_setting = new Intent(HabitSettingActivity.this, SettingActivity.class);
+                        startActivity(intent_setting);
+                        break;
+                }
+                return false;
+            }
+            });
 
         btn_toggle_mon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
