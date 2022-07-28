@@ -24,9 +24,9 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="118dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="260dp"
+            android:layout_width="205dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="170dp"
             android:entries="@array/habit_list" />
 
         <TextView
