@@ -46,19 +46,21 @@ public class MainHabitDetailActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.item_home:
+                        Intent intent_home = new Intent(MainHabitDetailActivity.this, MainActivity.class);
+                        startActivity(intent_home);
+                        break;
                     case R.id.item_habit:
-                        Intent intent_main = new Intent(MainHabitDetailActivity.this, MainActivity.class);
+                        Intent intent_main = new Intent(MainHabitDetailActivity.this, HabitSettingActivity.class);
                         startActivity(intent_main);
                         break;
                     case R.id.item_calender:
-                        Intent intent_calender = new Intent(MainHabitDetailActivity.this, CalenderHabitActivity.class);
+                        Intent intent_calender = new Intent(MainHabitDetailActivity.this, CalenderActivity.class);
                         startActivity(intent_calender);
                         break;
-                    case R.id.item_friend:
-                        Toast.makeText(MainHabitDetailActivity.this,"friend",Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.item_setting:
-                        Toast.makeText(MainHabitDetailActivity.this,"setting",Toast.LENGTH_SHORT).show();
+                        Intent intent_setting = new Intent(MainHabitDetailActivity.this, SettingActivity.class);
+                        startActivity(intent_setting);
                         break;
                 }
                 return false;
@@ -75,10 +77,11 @@ public class MainHabitDetailActivity extends AppCompatActivity {
         recyclerView.setAdapter(mainHabitDetailAdapter);
 
         timePicker = binding.tpHabitDetail;
+        timePicker.setIs24HourView(true);
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int hour, int min) {
-                time = hour +":"+min;
+                time = String.format("%02d:%02d",hour,min);
             }
         });
 

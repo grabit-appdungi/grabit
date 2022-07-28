@@ -45,19 +45,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.item_home:
+                        Intent intent_home = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent_home);
+                        break;
                     case R.id.item_habit:
-                        Intent intent_main = new Intent(MainActivity.this, MainActivity.class);
+                        Intent intent_main = new Intent(MainActivity.this, HabitSettingActivity.class);
                         startActivity(intent_main);
                         break;
                     case R.id.item_calender:
-                        Intent intent_calender = new Intent(MainActivity.this, CalenderHabitActivity.class);
+                        Intent intent_calender = new Intent(MainActivity.this, CalenderActivity.class);
                         startActivity(intent_calender);
                         break;
-                    case R.id.item_friend:
-                        Toast.makeText(MainActivity.this,"friend",Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.item_setting:
-                        Toast.makeText(MainActivity.this,"setting",Toast.LENGTH_SHORT).show();
+                        Intent intent_setting = new Intent(MainActivity.this, SettingActivity.class);
+                        startActivity(intent_setting);
                         break;
                 }
                 return false;
@@ -70,13 +72,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        arrayList.add(new MainData("물 마시기","40"));
-        arrayList.add(new MainData("걷기","80"));
-        arrayList.add(new MainData("아침밥 먹기","100"));
-        arrayList.add(new MainData("독서하기","45"));
-        arrayList.add(new MainData("아침에 일어나기","0"));
-        arrayList.add(new MainData("스트레칭 하기","50"));
-        arrayList.add(new MainData("영어공부 하기","20"));
         arrayList.add(new MainData("물 마시기","40"));
         arrayList.add(new MainData("걷기","80"));
         arrayList.add(new MainData("아침밥 먹기","100"));
