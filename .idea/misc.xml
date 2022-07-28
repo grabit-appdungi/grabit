@@ -9,7 +9,9 @@
         <entry key="..\:/grabit/app/src/main/res/layout/activity_calender_habit.xml" value="0.2308529945553539" />
         <entry key="..\:/grabit/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/grabit/app/src/main/res/layout/activity_main_detail.xml" value="0.2689969604863222" />
+        <entry key="..\:/grabit/app/src/main/res/layout/activity_main_habit_detail.xml" value="0.33" />
         <entry key="..\:/grabit/app/src/main/res/layout/item_list_main.xml" value="0.25" />
+        <entry key="..\:/grabit/app/src/main/res/layout/item_llist_main_habit_detail.xml" value="0.338768115942029" />
         <entry key="..\:/grabit/app/src/main/res/layout/layout_drawer_header.xml" value="0.33" />
         <entry key="..\:/grabit/app/src/main/res/layout/layout_drawer_menu.xml" value="0.5" />
         <entry key="..\:/grabit/app/src/main/res/layout/layout_main_hamburger.xml" value="0.2689969604863222" />
