@@ -1,208 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- 커밋 확인용 -->
-
-    <LinearLayout
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="421dp">
+        android:layout_height="match_parent">
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="351dp"
-            android:layout_height="336dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="25dp" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="118dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="260dp"
-            android:entries="@array/habit_list" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="습관 수행률" />
+        <!-- 커밋 확인용 -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="421dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:gravity="center_vertical|right"
-                android:text="이번 달에"
-                android:textSize="20dp" />
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="351dp"
+                android:layout_height="336dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="25dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="118dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="260dp"
+                android:entries="@array/habit_list" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:text="%"
-                android:textSize="30dp" />
+                android:layout_marginLeft="8dp"
+                android:text="습관 수행률" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="30dp"
-                android:gravity="center_vertical|right"
-                android:text="해냈어요!"
-                android:textSize="20dp" />
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical|right"
+                    android:text="이번 달에"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="30dp"
-            android:text="오늘까지" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="%"
+                    android:textSize="30dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical|right"
+                    android:text="해냈어요!"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="60dp"
-                android:gravity="center_vertical|right"
-                android:text="연속"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:text="6"
-                android:textAlignment="center"
-                android:textSize="30dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="30dp"
+                android:text="오늘까지" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="50dp"
-                android:gravity="center_vertical|right"
-                android:text="일째 해냈어요!"
-                android:textSize="20dp" />
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center_vertical|right"
+                    android:text="연속"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="8dp"
-            android:text="최고 기록" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="6"
+                    android:textAlignment="center"
+                    android:textSize="30dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:gravity="center_vertical|right"
+                    android:text="일째 해냈어요!"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:gravity="center_vertical|right"
-                android:text="이번 달에 최대"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="6"
-                android:textAlignment="center"
-                android:textSize="30dp" />
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="최고 기록" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="30dp"
-                android:gravity="center_vertical|right"
-                android:text="일 연속 해냈어요!"
-                android:textSize="20dp" />
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical|right"
+                    android:text="이번 달에 최대"
+                    android:textSize="20dp" />
 
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textAlignment="center"
+                    android:textSize="30dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="8dp"
-            android:text="월별 비교" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical|right"
+                    android:text="일 연속 해냈어요!"
+                    android:textSize="20dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="46dp">
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center_vertical|right"
-                android:text="지난 달" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="월별 비교" />
 
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="281dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp">
 
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="9dp"
-                android:gravity="center_vertical|right"
-                android:text="%" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_vertical|right"
+                    android:text="지난 달" />
 
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="281dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="9dp"
+                    android:gravity="center_vertical|right"
+                    android:text="%" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_vertical|right"
+                    android:text="이번 달" />
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="282dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:gravity="center_vertical|right"
+                    android:text="%" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/layout_drawer_header"
+        app:menu="@menu/drawer_menu"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center_vertical|right"
-                android:text="이번 달" />
-
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="282dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="20dp"/>
-
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:gravity="center_vertical|right"
-                android:text="%" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>
