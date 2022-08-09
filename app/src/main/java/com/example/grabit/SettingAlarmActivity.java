@@ -10,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +31,7 @@ public class SettingAlarmActivity extends AppCompatActivity {
     Switch disturbSwc;
     LinearLayout disturbTxts;
     Button disturbBtn;
+    Button confirmBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class SettingAlarmActivity extends AppCompatActivity {
         soundImg = binding.imgSoundCheck;
         vibrateImg = binding.imgVibrateCheck;
         silentImg = binding.imgSilentCheck;
+        confirmBtn = binding.btnConfirm;
 
         startTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +131,14 @@ public class SettingAlarmActivity extends AppCompatActivity {
                 soundImg.setVisibility(View.INVISIBLE);
                 vibrateImg.setVisibility(View.INVISIBLE);
                 silentImg.setVisibility(View.VISIBLE);
+            }
+        });
+
+        confirmBtn.setOnClickListener(new View.OnClickListener(){
+            @NonNull
+            @Override
+            public void onClick(View view){
+                Toast.makeText(getApplicationContext(),"방해금지 모드 설정",Toast.LENGTH_SHORT).show();
             }
         });
 
