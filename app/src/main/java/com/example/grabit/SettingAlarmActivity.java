@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,9 +22,16 @@ public class SettingAlarmActivity extends AppCompatActivity {
     private ActivitySettingAlarmBinding binding;
     TextView startTextView;
     TextView finishTextView;
+    TextView soundTxt;
+    TextView vibrateTxt;
+    TextView silentTxt;
+    ImageView soundImg;
+    ImageView vibrateImg;
+    ImageView silentImg;
     Switch disturbSwc;
     LinearLayout disturbTxts;
     Button disturbBtn;
+    Button confirmBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +44,13 @@ public class SettingAlarmActivity extends AppCompatActivity {
         disturbSwc = binding.swc;
         disturbTxts = binding.txtsDisturbSetting;
         disturbBtn = binding.btnConfirm;
+        soundTxt = binding.txtSettingSound;
+        vibrateTxt = binding.txtSettingVibration;
+        silentTxt = binding.txtSettingSilent;
+        soundImg = binding.imgSoundCheck;
+        vibrateImg = binding.imgVibrateCheck;
+        silentImg = binding.imgSilentCheck;
+        confirmBtn = binding.btnConfirm;
 
         startTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +90,10 @@ public class SettingAlarmActivity extends AppCompatActivity {
             disturbBtn.setVisibility(View.INVISIBLE);
         }
 
+        soundImg.setVisibility(View.INVISIBLE);
+        vibrateImg.setVisibility(View.INVISIBLE);
+        silentImg.setVisibility(View.INVISIBLE);
+
         disturbSwc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -84,6 +105,40 @@ public class SettingAlarmActivity extends AppCompatActivity {
                     disturbTxts.setVisibility(View.INVISIBLE);
                     disturbBtn.setVisibility(View.INVISIBLE);
                 }
+            }
+        });
+
+
+        soundTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundImg.setVisibility(View.VISIBLE);
+                vibrateImg.setVisibility(View.INVISIBLE);
+                silentImg.setVisibility(View.INVISIBLE);
+            }
+        });
+        vibrateTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundImg.setVisibility(View.INVISIBLE);
+                vibrateImg.setVisibility(View.VISIBLE);
+                silentImg.setVisibility(View.INVISIBLE);
+            }
+        });
+        silentTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundImg.setVisibility(View.INVISIBLE);
+                vibrateImg.setVisibility(View.INVISIBLE);
+                silentImg.setVisibility(View.VISIBLE);
+            }
+        });
+
+        confirmBtn.setOnClickListener(new View.OnClickListener(){
+            @NonNull
+            @Override
+            public void onClick(View view){
+                Toast.makeText(getApplicationContext(),"방해금지 모드 설정",Toast.LENGTH_SHORT).show();
             }
         });
 

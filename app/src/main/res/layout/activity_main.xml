@@ -67,6 +67,8 @@
             app:layout_constraintTop_toBottomOf="@id/pgbar_main"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constrainedHeight="true"
             tools:listitem="@layout/item_list_main"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
