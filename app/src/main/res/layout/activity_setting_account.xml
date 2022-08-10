@@ -121,7 +121,7 @@
             android:minHeight="0dp"
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp" />
         <Button
             android:id="@+id/btn_leave"
             android:layout_width="match_parent"

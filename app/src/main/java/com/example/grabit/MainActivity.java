@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         dateText = binding.txtDate;
 
-        if(arrayList != null){
+        if(arrayList != null) {
             int i = 0;
             progress = 0;
             while(i < arrayList.size()){

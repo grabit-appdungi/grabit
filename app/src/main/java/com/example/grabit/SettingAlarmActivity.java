@@ -142,5 +142,13 @@ public class SettingAlarmActivity extends AppCompatActivity {
             }
         });
 
+        Button btn_confirm = binding.btnConfirm;
+        btn_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "알람이 설정되었습니다", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }//onCreat
 }
