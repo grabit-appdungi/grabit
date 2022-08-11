@@ -58,39 +58,12 @@ public class HabitSettingActivity extends AppCompatActivity {
             }
             });
 
-        navigationView = binding.nav;
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.item_home:
-                        Intent intent_home = new Intent(HabitSettingActivity.this, MainActivity.class);
-                        startActivity(intent_home);
-                        break;
-                    case R.id.item_habit:
-                        Intent intent_main = new Intent(HabitSettingActivity.this, HabitSettingActivity.class);
-                        startActivity(intent_main);
-                        break;
-                    case R.id.item_calender:
-                        Intent intent_calender = new Intent(HabitSettingActivity.this, CalenderActivity.class);
-                        startActivity(intent_calender);
-                        break;
-                    case R.id.item_setting:
-                        Intent intent_setting = new Intent(HabitSettingActivity.this, SettingActivity.class);
-                        startActivity(intent_setting);
-                        break;
-                }
-                return false;
-            }
-        });
-
         btn_toggle_mon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "월요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "월요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 월요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -100,7 +73,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "화요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "화요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 화요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -110,7 +83,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "수요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "수요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 수요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -120,7 +93,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "목요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "목요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 목요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -130,7 +103,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "금요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "금요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 금요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -140,7 +113,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "토요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "토요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 토요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -150,7 +123,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "일요일", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "일요일 해제", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "낫 일요일", Toast.LENGTH_SHORT).show();
                 }
             }
         });
