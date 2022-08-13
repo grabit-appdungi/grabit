@@ -14,8 +14,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8ae7000-4b3c-4114-9c3a-8e1b12bffce3" name="Default Changelist" comment="merge">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d8ae7000-4b3c-4114-9c3a-8e1b12bffce3" name="Default Changelist" comment="merge.">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/grabit/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/grabit/MainActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660376563270</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="merge.">
+      <created>1660377758162</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660377758162</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -293,6 +300,7 @@
     <MESSAGE value="habit_setting" />
     <MESSAGE value="하루 최소 이행 횟수 설정, db 클래스 생성" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="merge." />
+    <option name="LAST_COMMIT_MESSAGE" value="merge." />
   </component>
 </project>

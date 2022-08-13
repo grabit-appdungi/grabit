@@ -75,12 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         arrayList = new ArrayList<>();
         arrayList.add(new MainData("물 마시기","40"));
-        arrayList.add(new MainData("걷기","80"));
-        arrayList.add(new MainData("아침밥 먹기","100"));
-        arrayList.add(new MainData("독서하기","45"));
-        arrayList.add(new MainData("아침에 일어나기","0"));
-        arrayList.add(new MainData("스트레칭 하기","50"));
-        arrayList.add(new MainData("영어공부 하기","20"));
 
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);
