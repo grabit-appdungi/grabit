@@ -70,6 +70,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constrainedHeight="true"
             tools:listitem="@layout/item_list_main"/>
+
+        <Button
+            android:id="@+id/btn_add_habit"
+            android:layout_width="281dp"
+            android:layout_height="49dp"
+            android:text="+"
+            android:textColor="@color/black"
+            android:backgroundTint="#B0B0B0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcview_main" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

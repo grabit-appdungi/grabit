@@ -32,8 +32,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
-        holder.habit_name.setText(arrayList.get(position).getHabit_name());
-        holder.habit_num.setText(arrayList.get(position).getHabit_num());
+//        holder.habit_name.setText(arrayList.get(position).getHabit_name());
+ //       holder.habit_num.setText(arrayList.get(position).getHabit_num());
 
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
