@@ -94,5 +94,4 @@
         app:headerLayout="@layout/layout_drawer_header"
         app:menu="@menu/drawer_menu"/>
 
-
 </androidx.drawerlayout.widget.DrawerLayout>
