@@ -13,7 +13,6 @@ import android.widget.DatePicker;
 import android.app.DatePickerDialog;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.grabit.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int progress;
 
     DatePickerDialog datePickerDialog;
-    private ArrayList<MainData> arrayList;
+    private ArrayList<DatabaseHelper> arrayList;
     private MainAdapter mainAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
@@ -72,13 +71,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        arrayList.add(new MainData("물 마시기","40"));
-        arrayList.add(new MainData("걷기","80"));
-        arrayList.add(new MainData("아침밥 먹기","100"));
-        arrayList.add(new MainData("독서하기","45"));
-        arrayList.add(new MainData("아침에 일어나기","0"));
-        arrayList.add(new MainData("스트레칭 하기","50"));
-        arrayList.add(new MainData("영어공부 하기","20"));
+        arrayList.add(new DatabaseHelper("물 마시기","40"), "Grabit", null, 1);
 
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);

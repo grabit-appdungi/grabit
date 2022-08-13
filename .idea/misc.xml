@@ -31,8 +31,11 @@
         <entry key="app/src/main/res/layout/activity_main_detail.xml" value="0.10555555555555556" />
         <entry key="app/src/main/res/layout/activity_main_habit_detail.xml" value="0.35627727566519035" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.13645833333333332" />
-        <entry key="app/src/main/res/layout/activity_setting_account.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_setting_account.xml" value="0.25206909179687503" />
         <entry key="app/src/main/res/layout/activity_setting_alarm.xml" value="0.2890625" />
+        <entry key="app/src/main/res/layout/activity_setting_theme.xml" value="0.2890625" />
+        <entry key="app/src/main/res/layout/item_list_main.xml" value="0.2890625" />
+        <entry key="app/src/main/res/layout/item_llist_main_habit_detail.xml" value="0.2890625" />
         <entry key="app/src/main/res/layout/layout_drawer_header.xml" value="0.1" />
       </map>
     </option>
