@@ -36,7 +36,7 @@ public class CalenderHabitActivity extends AppCompatActivity {
         arrayList.add("습관1");
         arrayList.add("습관2");
 
-        spinner = binding.spinner;
+        spinner = binding.spnHabit;
         navigationView = binding.nav;
 
 
