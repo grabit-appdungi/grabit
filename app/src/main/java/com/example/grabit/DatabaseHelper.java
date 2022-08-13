@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     PERIOD + " text, " +
                     ALARM_TIME + " integer, " +
                     HABIT_MEMO + " text" +
-            ")";
+                    ")";
 
     // 데이터베이스 생성
     public DatabaseHelper(Context context) {
