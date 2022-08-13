@@ -7,38 +7,45 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    // If you change the database schema, you must increment the database version.
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "Grabit.db";
 
-    private static final String DATABASE_NAME = "person.db";
-    private static final int DATABASE_VERSION = 1;
+    // columns
+    public static final String TABLE_NAME = "HABIT_SETTING";
+    public static final String HABIT_NAME = "habit_name";
+    public static final String PERIOD = "period";
+    public static final String ALARM_TIME = "alarm_time";
+    public static final String HABIT_MEMO = "habit_memo";
 
-    public static final String TABLE_NAME = "person";
-    public static final String PERSON_ID = "_id";
-    public static final String PERSON_NAME = "name";
-    public static final String PERSON_AGE = "age";
-    public static final String PERSON_MOBILE = "mobile";
+    public static final String[] ALL_COLUMNS = {HABIT_NAME, PERIOD, ALARM_TIME, HABIT_MEMO};
 
-    public static final String[] ALL_COLUMNS = {PERSON_ID, PERSON_NAME, PERSON_AGE, PERSON_MOBILE};
-
+    // 테이블 생성문
     private static final String CREATE_TABLE =
             "create table " + TABLE_NAME + "(" +
-                    PERSON_ID + "integer primary key autoincrement, " +
-                    PERSON_NAME + "text, " +
-                    PERSON_AGE + " integer, " +
-                    PERSON_MOBILE + " text" +
+                    HABIT_NAME + "Interger primary key autoincrement, " +
+                    PERIOD + " text, " +
+                    ALARM_TIME + " integer, " +
+                    HABIT_MEMO + " text" +
             ")";
 
-    public DatabaseHelper(@Nullable Context context) {
-        super(context, PERSON_NAME, null, DATABASE_VERSION);
+    // 데이터베이스 생성
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    @Override
+    // 테이블 생성
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
     }
 
-    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists "+ TABLE_NAME);
+        db.execSQL("drop table if exists " + TABLE_NAME);
         onCreate(db);
     }
+
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
+    }
+
 }
