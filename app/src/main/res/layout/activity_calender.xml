@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--    tools:context=".MainActivity"-->
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!-- 커밋 확인용 -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +26,7 @@
                 android:layout_marginEnd="25dp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spn_habit"
                 android:layout_width="118dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="260dp"/>

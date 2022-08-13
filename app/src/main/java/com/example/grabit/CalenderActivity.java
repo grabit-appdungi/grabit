@@ -36,7 +36,7 @@ public class CalenderActivity extends AppCompatActivity {
         arrayList.add("습관1");
         arrayList.add("습관2");
 
-        spinner = binding.spinner;
+        spinner = binding.spnHabit;
         navigationView = binding.nav;
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
@@ -79,5 +79,24 @@ public class CalenderActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+
+        arrayAdapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, arrayList);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView,View view, int position, long id) {
+               if(arrayList.get(position)!="전체"){
+                   Intent intent_whole = new Intent(CalenderActivity.this,CalenderHabitActivity.class);
+                   intent_whole.putExtra("selection",position);
+                   startActivity(intent_whole);
+               }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        
+
     }
 }
