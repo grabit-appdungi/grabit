@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.app.DatePickerDialog;
 import android.widget.ProgressBar;
@@ -65,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Button btn_add_habit = binding.btnAddHabit;
         recyclerView = binding.rcviewMain;
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        arrayList.add(new DatabaseHelper("물 마시기","40"), "Grabit", null, 1);
+        //arrayList.add(new DatabaseHelper("물 마시기","40"), "Grabit", null, 1);
 
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             int i = 0;
             progress = 0;
             while(i < arrayList.size()){
-                progress = progress + Integer.parseInt(arrayList.get(i).getHabit_num().toString());
+//                progress = progress + Integer.parseInt(arrayList.get(i).getHabit_num().toString());
                 i++;
             }
             progress = progress / arrayList.size() ;
@@ -112,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_add_habit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_home = new Intent(MainActivity.this, HabitSettingActivity.class);
+                startActivity(intent_home);
+            }
+        });
 
 
     }//onCreat()

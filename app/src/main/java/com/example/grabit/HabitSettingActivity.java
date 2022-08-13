@@ -3,13 +3,19 @@ package com.example.grabit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.grabit.databinding.ActivityHabitSettingBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -31,7 +37,12 @@ public class HabitSettingActivity extends AppCompatActivity {
         ToggleButton btn_toggle_fri = binding.btnToggleFri;
         ToggleButton btn_toggle_sat = binding.btnToggleSat;
         ToggleButton btn_toggle_sun = binding.btnToggleSun;
+
         navigationView = binding.nav;
+
+        Switch swc_alarm = binding.swcAlarm;
+        LinearLayout lnr_alarm = binding.lnrAlarm;
+        Button btn_habit_confirm =  binding.btnHabitConfirm;
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
@@ -56,7 +67,7 @@ public class HabitSettingActivity extends AppCompatActivity {
                 }
                 return false;
             }
-            });
+        });
 
         navigationView = binding.nav;
 
@@ -152,6 +163,32 @@ public class HabitSettingActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "일요일 해제", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        if(swc_alarm.isChecked()){
+            lnr_alarm.setVisibility(View.VISIBLE);
+        }
+        else{
+            lnr_alarm.setVisibility(View.INVISIBLE);
+        }
+
+        swc_alarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(swc_alarm.isChecked()){
+                    lnr_alarm.setVisibility(View.VISIBLE);
+                }
+                else{
+                    lnr_alarm.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        btn_habit_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_home = new Intent(HabitSettingActivity.this, MainActivity.class);
+                startActivity(intent_home);
             }
         });
     }
