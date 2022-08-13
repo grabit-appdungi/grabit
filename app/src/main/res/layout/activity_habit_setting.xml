@@ -31,16 +31,14 @@
             android:id="@+id/etxt_habit_name"
             android:layout_width="316dp"
             android:layout_height="62dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="52dp"
-            android:ems="10"
             android:hint="습관명을 입력하세요."
-            android:inputType="number"
             android:textColorHint="#B1B1B3"
             app:layout_constraintBottom_toTopOf="@+id/txt_frequency"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <LinearLayout
             android:id="@+id/lnr_frequency"
@@ -171,12 +169,10 @@
             android:id="@+id/swc_alarm"
             android:layout_width="96dp"
             android:layout_height="40dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="4dp"
             android:text="알림"
             app:layout_constraintBottom_toTopOf="@+id/lnr_alarm"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/txt_alarm" />
 
         <TextView
@@ -202,26 +198,51 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent">
 
-            <Spinner
-                android:id="@+id/spn_alarm"
-                android:layout_width="133dp"
-                android:layout_height="66dp"
-                android:layout_marginBottom="312dp"
-                android:entries="@array/alarm_type"
-                app:layout_constraintBottom_toTopOf="@+id/button"
-                app:layout_constraintEnd_toStartOf="@+id/tp_habit_notification"
-                app:layout_constraintHorizontal_bias="0.476"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <TimePicker
                 android:id="@+id/tp_habit_alarm"
-                android:layout_width="254dp"
-                android:layout_height="65dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="312dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:timePickerMode="spinner"
                 app:layout_constraintBottom_toTopOf="@+id/button"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="392dp"
+            android:layout_height="89dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btn_habit_confirm"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_alarm"
+            app:layout_constraintVertical_bias="0.079"
+            tools:layout_editor_absoluteX="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="하루 최소 이행 횟수"
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="294dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="9dp"
+                    tools:layout_editor_absoluteY="291dp" />
+
+                <TextView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:textSize="15dp"
+                    android:text="회" />
+            </LinearLayout>
 
         </LinearLayout>
 
