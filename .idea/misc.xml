@@ -24,11 +24,15 @@
         <entry key="..\:/grabit/app/src/main/res/layout/layout_drawer_menu.xml" value="0.5" />
         <entry key="..\:/grabit/app/src/main/res/layout/layout_main_hamburger.xml" value="0.2689969604863222" />
         <entry key="..\:/grabit/app/src/main/res/menu/drawer_menu.xml" value="0.30833333333333335" />
+        <entry key="app/src/main/res/drawable/prograssbar_40per.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/prograssbar_horizonal.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/progressbar_main.xml" value="0.194" />
+        <entry key="app/src/main/res/drawable/progressbar_percent.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_calender.xml" value="0.17543859649122806" />
         <entry key="app/src/main/res/layout/activity_calender_habit.xml" value="0.16259057971014493" />
         <entry key="app/src/main/res/layout/activity_habit_setting.xml" value="0.2682291666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.313232421875" />
-        <entry key="app/src/main/res/layout/activity_main_detail.xml" value="0.10555555555555556" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.262744140625" />
+        <entry key="app/src/main/res/layout/activity_main_detail.xml" value="0.17658827039930552" />
         <entry key="app/src/main/res/layout/activity_main_habit_detail.xml" value="0.35627727566519035" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.13645833333333332" />
         <entry key="app/src/main/res/layout/activity_setting_account.xml" value="0.25206909179687503" />

@@ -6,16 +6,24 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.app.DatePickerDialog;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.grabit.databinding.ActivityMainBinding;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -27,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     int progress;
 
     DatePickerDialog datePickerDialog;
-    private ArrayList<DatabaseHelper> arrayList;
+    private ArrayList<MainData> arrayList;
     private MainAdapter mainAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
@@ -64,26 +72,33 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return false;
             }
+
+
         });
 
-        Button btn_add_habit = binding.btnAddHabit;
         recyclerView = binding.rcviewMain;
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList = new ArrayList<>();
-        //arrayList.add(new DatabaseHelper("물 마시기","40"), "Grabit", null, 1);
+        arrayList.add(new MainData("물 마시기","40"));
+        arrayList.add(new MainData("걷기","80"));
+        arrayList.add(new MainData("아침밥 먹기","100"));
+        arrayList.add(new MainData("독서하기","45"));
+        arrayList.add(new MainData("아침에 일어나기","0"));
+        arrayList.add(new MainData("스트레칭 하기","50"));
+        arrayList.add(new MainData("영어공부 하기","20"));
 
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);
 
         dateText = binding.txtDate;
 
-        if(arrayList != null) {
+        if(arrayList != null){
             int i = 0;
             progress = 0;
             while(i < arrayList.size()){
-//                progress = progress + Integer.parseInt(arrayList.get(i).getHabit_num().toString());
+                progress = progress + Integer.parseInt(arrayList.get(i).getHabit_num().toString());
                 i++;
             }
             progress = progress / arrayList.size() ;
@@ -113,15 +128,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_add_habit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent_home = new Intent(MainActivity.this, HabitSettingActivity.class);
-                startActivity(intent_home);
-            }
-        });
-
 
     }//onCreat()
-
 }
