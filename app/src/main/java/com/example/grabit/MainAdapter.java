@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
 
-    private ArrayList<DatabaseHelper> arrayList;
+    private ArrayList<MainData> arrayList;
     private Intent intent;
 
-    public MainAdapter(ArrayList<DatabaseHelper> arrayList) {
+    public MainAdapter(ArrayList<MainData> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -32,8 +33,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
-//        holder.habit_name.setText(arrayList.get(position).getHabit_name());
- //       holder.habit_num.setText(arrayList.get(position).getHabit_num());
+        holder.habit_name.setText(arrayList.get(position).getHabit_name());
+        holder.habit_num.setText(arrayList.get(position).getHabit_num());
 
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {

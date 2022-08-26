@@ -12,237 +12,283 @@
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="-87dp">
 
-
-        <TextView
-            android:id="@+id/txt_habit_name"
-            android:layout_width="69dp"
-            android:layout_height="42dp"
-            android:layout_marginEnd="6dp"
-            android:gravity="center"
-            android:text="습관"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/txt_frequency"
-            app:layout_constraintEnd_toStartOf="@+id/etxt_habit_name"
-            app:layout_constraintHorizontal_bias="0.583"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.222" />
-
-        <EditText
-            android:id="@+id/etxt_habit_name"
-            android:layout_width="316dp"
-            android:layout_height="62dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="52dp"
-            android:hint="습관명을 입력하세요."
-            android:textColorHint="#B1B1B3"
-            app:layout_constraintBottom_toTopOf="@+id/txt_frequency"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
         <LinearLayout
-            android:id="@+id/lnr_frequency"
-            android:layout_width="395dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="4dp"
-            android:gravity="center_vertical|right"
-            android:orientation="horizontal"
+            android:id="@+id/lnr_habit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/lnr_frequency"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_frequency">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ToggleButton
-                android:id="@+id/btn_toggle_mon"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="MON"
-                android:textOn="MON"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
+            <TextView
+                android:id="@+id/txt_habit_name"
+                android:layout_width="69dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="6dp"
+                android:gravity="center"
+                android:text="습관"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toStartOf="@+id/etxt_habit_name"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ToggleButton
-                android:id="@+id/btn_toggle_tue"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="TUE"
-                android:textOn="TUE"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <ToggleButton
-                android:id="@+id/btn_toggle_wed"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="WED"
-                android:textOn="WED"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_habit"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/plus_profile"
+                    app:layout_constraintEnd_toStartOf="@+id/etxt_habit_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_habit_name" />
 
-            <ToggleButton
-                android:id="@+id/btn_toggle_thu"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="THU"
-                android:textOn="THU"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
+                <EditText
+                    android:id="@+id/etxt_habit_name"
+                    android:layout_width="295dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="4dp"
+                    android:hint="습관명을 입력하세요."
+                    android:textColorHint="#B1B1B3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ToggleButton
-                android:id="@+id/btn_toggle_fri"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="FRI"
-                android:textOn="FRI"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
-
-            <ToggleButton
-                android:id="@+id/btn_toggle_sat"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="SAT"
-                android:textOn="SAT"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
-
-            <ToggleButton
-                android:id="@+id/btn_toggle_sun"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="@drawable/round_toggle_button"
-                android:checked="true"
-                android:textColor="@drawable/color_toggle_button"
-                android:textOff="SUN"
-                android:textOn="SUN"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="149dp" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txt_frequency"
-            android:layout_width="63dp"
-            android:layout_height="39dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="주기"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/lnr_frequency"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.028"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Switch
-            android:id="@+id/swc_alarm"
-            android:layout_width="96dp"
-            android:layout_height="40dp"
-            android:text="알림"
+        <LinearLayout
+            android:id="@+id/lnr_frequency"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_habit"
             app:layout_constraintBottom_toTopOf="@+id/lnr_alarm"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/txt_alarm" />
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/txt_alarm"
-            android:layout_width="126dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            android:text="알림 시간 설정"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/lnr_alarm"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lnr_frequency"
-            app:layout_constraintVertical_bias="0.938" />
+            <TextView
+                android:id="@+id/txt_frequency"
+                android:layout_width="63dp"
+                android:layout_height="39dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="주기"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/lnr_frequency"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.022"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/lnr_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_mon"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="MON"
+                    android:textOn="MON"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_tue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="TUE"
+                    android:textOn="TUE"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_wed"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="WED"
+                    android:textOn="WED"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_thu"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="THU"
+                    android:textOn="THU"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_fri"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="FRI"
+                    android:textOn="FRI"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_sat"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="SAT"
+                    android:textOn="SAT"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ToggleButton
+                    android:id="@+id/btn_toggle_sun"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/round_toggle_button"
+                    android:checked="true"
+                    android:textColor="@drawable/color_toggle_button"
+                    android:textOff="SUN"
+                    android:textOn="SUN"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="149dp" />
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lnr_alarm"
-            android:layout_width="400dp"
-            android:layout_height="65dp"
-            android:layout_marginBottom="328dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_habit_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_frequency"
+            app:layout_constraintBottom_toTopOf="@+id/lnr_min_habit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_alarm"
+                    android:layout_width="126dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:text="알림 시간 설정"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toTopOf="@+id/lnr_alarm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lnr_frequency"
+                    app:layout_constraintVertical_bias="0.938" />
+
+                <Switch
+                    android:id="@+id/swc_alarm"
+                    android:layout_width="96dp"
+                    android:layout_height="40dp"
+                    android:text="알림"
+                    app:layout_constraintBottom_toTopOf="@+id/lnr_alarm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/txt_alarm" />
+
+            </LinearLayout>
 
             <TimePicker
                 android:id="@+id/tp_habit_alarm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:timePickerMode="spinner"
-                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintBottom_toTopOf="@+id/timepicker_notification"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </LinearLayout>
 
-
         <LinearLayout
-            android:layout_width="392dp"
-            android:layout_height="89dp"
+            android:id="@+id/lnr_min_habit"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_marginBottom="116dp"
             android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_alarm"
             app:layout_constraintBottom_toTopOf="@+id/btn_habit_confirm"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lnr_alarm"
-            app:layout_constraintVertical_bias="0.079">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:text="하루 최소 이행 횟수"
                 android:textSize="18dp"
                 tools:layout_editor_absoluteX="15dp"
                 tools:layout_editor_absoluteY="294dp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="397dp"
                 android:layout_height="wrap_content">
 
                 <EditText
                     android:layout_width="70dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="9dp"
                     tools:layout_editor_absoluteY="291dp" />
 
                 <TextView
                     android:layout_width="34dp"
-                    android:layout_height="34dp"
+                    android:layout_height="48dp"
                     android:text="회"
                     android:textSize="15dp" />
             </LinearLayout>

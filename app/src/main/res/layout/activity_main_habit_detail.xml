@@ -57,16 +57,29 @@
             app:layout_constraintTop_toBottomOf="@+id/view_habit_detail"
             app:layout_constraintBottom_toTopOf="@+id/etxt_habit_detail"
             android:layout_marginTop="15dp"/>
+
         <EditText
             android:id="@+id/etxt_habit_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:lines="5"
             android:hint="메모를 작성하세요"
+            android:lines="5"
+            app:layout_constraintBottom_toTopOf="@id/btn_habit_detail_write"
             app:layout_constraintTop_toBottomOf="@id/tp_habit_detail"
-            app:layout_constraintBottom_toTopOf="@id/btn_habit_detail_write"/>
+            tools:layout_editor_absoluteX="15dp" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="208dp"
+            android:backgroundTint="#9999CC"
+            android:text="수정"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_habit_detail_write"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etxt_habit_detail" />
+
         <Button
             android:id="@+id/btn_habit_detail_write"
             android:layout_width="wrap_content"

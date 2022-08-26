@@ -95,5 +95,14 @@ public class MainHabitDetailActivity extends AppCompatActivity {
                 mainHabitDetailAdapter.notifyDataSetChanged();
             }
         });
+
+        Button btn_edit = binding.btnEdit;
+        btn_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainHabitDetailActivity.this, HabitSettingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

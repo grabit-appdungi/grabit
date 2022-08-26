@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:paddingBottom="20dp"
             android:paddingTop="30dp"/>
+
         <ProgressBar
             android:id="@+id/pgbar_main"
             android:layout_width="130dp"
@@ -36,8 +37,8 @@
             android:progress="10"
             app:layout_constraintTop_toBottomOf="@+id/txt_date"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/rcview_main" />
+            app:layout_constraintRight_toRightOf="parent" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,28 +60,110 @@
                 android:textSize="15dp"/>
         </LinearLayout>
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcview_main"
-            android:layout_width="280dp"
+        // frameLayout -> 레이아웃 겹치기 가능
+        <FrameLayout
+            android:id="@+id/list_main"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/pgbar_main"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constrainedHeight="true"
-            tools:listitem="@layout/item_list_main"/>
+            app:layout_constraintTop_toBottomOf="@+id/pgbar_main">
+
+            <ProgressBar
+                android:layout_marginTop="10dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="40" />
+
+            <ProgressBar
+                android:layout_marginTop="59dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="80" />
+
+            <ProgressBar
+                android:layout_marginTop="108dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="100" />
+
+            <ProgressBar
+                android:layout_marginTop="157dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="45" />
+
+            <ProgressBar
+                android:layout_marginTop="206dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="0" />
+
+            <ProgressBar
+                android:layout_marginTop="255dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="50" />
+
+            <ProgressBar
+                android:layout_marginTop="304dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_barchart"
+                android:max="100"
+                android:progress="20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcview_main"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pgbar_main"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constrainedHeight="true"
+                tools:listitem="@layout/item_list_main"/>
+
+        </FrameLayout>
 
         <Button
             android:id="@+id/btn_add_habit"
             android:layout_width="281dp"
             android:layout_height="49dp"
+            android:backgroundTint="#B0B0B0"
             android:text="+"
             android:textColor="@color/black"
-            android:backgroundTint="#B0B0B0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rcview_main" />
+            app:layout_constraintTop_toBottomOf="@+id/list_main" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

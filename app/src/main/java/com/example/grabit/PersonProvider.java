@@ -1,7 +1,6 @@
 package com.example.grabit;
 
 import android.content.ContentProvider;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -12,11 +11,11 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class HabitProvider extends ContentProvider {
+public class PersonProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "com.example.grabit";
-    public static final String BASE_PATH = "habit";
-    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
+    public static final String AUTHORITY = "org.techtown.provider";
+    public static final String BASE_PATH = "person";
+    public static final Uri CONTENT_URI = Uri.parse("content://"+ AUTHORITY + "/" + BASE_PATH);
 
     private static final int PERSONS = 1;
     private static final int PERSON_ID = 2;
@@ -41,10 +40,9 @@ public class HabitProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
-
         switch (uriMatcher.match(uri)) {
             case PERSONS:
-                return "vnd.android.cursor.dir/persons";
+                return "vmd.android.cursor.dir/persons";
             default:
                 throw new IllegalArgumentException("알 수 없는 URI : " + uri);
         }
@@ -52,17 +50,8 @@ public class HabitProvider extends ContentProvider {
 
     @Nullable
     @Override
-    public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
-
-        long id = database.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
-
-        if (id > 0) {
-            Uri _uri = ContentUris.withAppendedId(CONTENT_URI, id);
-            getContext().getContentResolver().notifyChange(_uri, null);
-            return _uri;
-        }
-
-        throw new SQLException("추가 실패 -> URI : " + uri);
+    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
+        return null;
     }
 
     @Nullable
@@ -73,33 +62,11 @@ public class HabitProvider extends ContentProvider {
 
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
-        int count = 0;
-        switch (uriMatcher.match(uri)) {
-            case PERSONS :
-                count = database.delete(DatabaseHelper.TABLE_NAME, s, strings);
-                break;
-            default :
-                throw new IllegalArgumentException("알 수 없는 URI : " + uri);
-        }
-
-        getContext().getContentResolver().notifyChange(uri, null);
-
-        return count;
+        return 0;
     }
 
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        int count = 0;
-        switch (uriMatcher.match(uri)) {
-            case PERSONS :
-                count = database.update(DatabaseHelper.TABLE_NAME, contentValues,  s, strings);
-                break;
-            default :
-                throw new IllegalArgumentException("알 수 없는 URI : " + uri);
-        }
-
-        getContext().getContentResolver().notifyChange(uri, null);
-
-        return count;
+        return 0;
     }
 }
